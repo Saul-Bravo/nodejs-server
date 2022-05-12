@@ -14,9 +14,14 @@ app.all((req, res, next) => {
     next();
 });
 
-app.get("/get", function (req, res) {
+app.get("/get", function(req, res) {
+    res.send("<h1>hola</h1>")
+});
+
+app.post("/post", function(req, res) {
+    let body = req.body;
     res.send({
-        hello: "world"
+        msg: `${body.message}`
     });
 });
 
