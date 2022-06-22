@@ -15,7 +15,40 @@ app.all((req, res, next) => {
 });
 
 app.get("/get", function(req, res) {
-    res.send("<h1>hola</h1>")
+    res.send({
+        users:[
+            {
+                userId: 1,
+                firstname: "Saul",
+                lastname: "Bravo",
+                phoneNumber: "6141758192"
+            },
+            {
+                userId: 2,
+                firstname: "Jorge",
+                lastname: "Rodriguez",
+                phoneNumber: "6141234567"
+            },
+            {
+                userId: 3,
+                firstname: "Maria",
+                lastname: "Lopez",
+                phoneNumber: "6147654321"
+            },
+            {
+                userId: 4,
+                firstname: "Rosa",
+                lastname: "Perez",
+                phoneNumber: "6148462738"
+            },
+            {
+                userId: 5,
+                firstname: "Rubén",
+                lastname: "Ramirez",
+                phoneNumber: "6144913745"
+            }
+        ]
+    })
 });
 
 app.post("/post", function(req, res) {
