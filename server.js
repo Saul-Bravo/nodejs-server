@@ -14,40 +14,26 @@ app.all((req, res, next) => {
     next();
 });
 
-app.get("/get", function(req, res) {
+let index = 0;
+
+function randomInt(){
+    // min = Math.ceil(0);
+    // max = Math.floor(10);
+    max = 10
+    min = 0
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+app.get("/getIndex", function(req, res) {
+    index = randomInt();
+
     res.send({
-        users:[
-            {
-                userId: 1,
-                firstname: "Saul",
-                lastname: "Bravo",
-                phoneNumber: "6141758192"
-            },
-            {
-                userId: 2,
-                firstname: "Jorge",
-                lastname: "Rodriguez",
-                phoneNumber: "6141234567"
-            },
-            {
-                userId: 3,
-                firstname: "Maria",
-                lastname: "Lopez",
-                phoneNumber: "6147654321"
-            },
-            {
-                userId: 4,
-                firstname: "Rosa",
-                lastname: "Perez",
-                phoneNumber: "6148462738"
-            },
-            {
-                userId: 5,
-                firstname: "Rubén",
-                lastname: "Ramirez",
-                phoneNumber: "6144913745"
-            }
-        ]
+        move: index
+    })
+});
+app.get("/getLeft", function(req, res) {
+    res.send({
+        move: "left"
     })
 });
 
