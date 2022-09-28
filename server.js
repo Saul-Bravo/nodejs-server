@@ -31,18 +31,14 @@ app.get("/getIndex", function(req, res) {
         move: index
     })
 });
-app.get("/getLeft", function(req, res) {
-    res.send({
-        move: "left"
-    })
-});
 
-app.post("/post", function(req, res) {
-    let body = req.body;
-    res.send({
-        msg: `${body.message}`
-    });
-});
+
+// app.post("/post", function(req, res) {
+//     let body = req.body;
+//     res.send({
+//         msg: `${body.message}`
+//     });
+// });
 
 app.listen(port, () => {
     console.log("listening port: " + port);
